@@ -1,5 +1,26 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  .row
+    .col-lg-9
+      center
+        h1= title
+        #container(ng-hide='hide')
+          p Name:
+          form(ng-submit='submitName()' ng-hide='hide') 
+            input(type='text', ng-model='userName') 
+  .row(ng-show='hide')
+    .col-lg-9
+      .panel-default
+        .panel-heading.panel-title testtest
+        .panel-body testtesttest
+    .col-lg-3
+      .panel-default
+        .panel-heading.panel-title {{userName}}
+        .panel-body.sidebar-title test
+
+          
+
+        
+      
+

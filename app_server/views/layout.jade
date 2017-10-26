@@ -1,11 +1,14 @@
 doctype html
-html
+html(ng-app='angPractice')
   head
     meta(name='viewport', content='width=device-width, intitial-scale=1.0')
     title= title
     link(rel='stylesheet', href='/bootstrap/css/amelia.bootstrap.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
-  body
+  body(ng-controller='myCtrl')
     block content
     script(src='/javascripts/jquery-3.2.1.js')
     script(src='/bootstrap/js/bootstrap.min.js')
+    script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js')
+    script(src='/angular/angPractice.js')
+    script(src='/angular/myCtrl.js')

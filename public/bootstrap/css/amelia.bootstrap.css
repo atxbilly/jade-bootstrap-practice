@@ -306,7 +306,7 @@ body {
   font-size: 14px;
   line-height: 1.428571429;
   color: #ffffff;
-  background-color: #108a93;
+  background-color: #000000;
 }
 
 input,
@@ -5819,7 +5819,7 @@ a.list-group-item:focus {
 
 .panel-default > .panel-heading {
   color: #444444;
-  background-color: #18cbd8;
+  background-color: #1f2b6d;
   border-color: #0d747c;
 }
 
