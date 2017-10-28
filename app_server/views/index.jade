@@ -2,21 +2,54 @@ extends layout
 
 block content
   .row
-    .col-lg-9
-      center
-        h1= title
-        #container(ng-hide='hide')
-          p Name:
-          form(ng-submit='submitName()' ng-hide='hide') 
-            input(type='text', ng-model='userName') 
+    .col-lg-12
+      h1= title
+  .row
+    .col-lg-12(ng-hide='hide')
+      .instructions
+        {{ 'Please enter the following information.' }}
+  .row
+    .col-lg-1
+      #container(ng-hide='hide')
+        <br>
+        {{ 'Name  : ' }}
+        <br>
+        {{ 'Hometown: ' }} 
+    .col-lg-2
+      form(ng-submit='submitName()',  ng-hide='hide')
+        <br>
+        input.pull-right(type='text', ng-model='userName')
+        <br>
+        input.pull-right(type='text', ng-model='homeCity')
+        <br>
+        input.pull-right(type='submit', id='submit', value='Submit')       
   .row(ng-show='hide')
     .col-lg-9
       .panel-default
-        .panel-heading.panel-title testtest
-        .panel-body testtesttest
+        .panel-heading.panel-title {{ 'City: ' + currentCity }} <br> {{'Location: ' + currentLocation }} 
+        .panel-body
+          span(ng-click="clicker()") Drugs for Sale
+          <br>
+          table
+            thead
+              th {{dealer1}}
+              th {{dealer2}}
+              th {{dealer3}}
+              th {{dealer4}}
+            tr(ng-repeat="drug in drugsForSale track by $index", )
+              td(ng-repeat="price in drug", ng-click="clicker(price)") {{price}}
+      {{testing}}
+            
+
+                   
+
+
+
+
+            
     .col-lg-3
       .panel-default
-        .panel-heading.panel-title {{userName}}
+        .panel-heading.panel-title <br/>{{'Welcome, ' + userName + '!'}}
         .panel-body.sidebar-title test
 
           
